@@ -1,0 +1,69 @@
+
+\documentclass{report}
+\usepackage{mathtools}
+\usepackage[utf8x]{inputenc}
+
+\begin{document}
+
+\chapter{Misurazione di valore efficace e frequenza}
+
+\section{Misurazione del valore efficace}
+
+\begin{itemize}
+\item Lettura dell’ampiezza picco-picco \(Vpp= V\)
+\item Formula impiegata per il calcolo dell’incertezza: Modello probabilistico \[\bar{n} = \tfrac{1}{m}\sum_{k=1}^m n_k \]
+\[s^2 (n_k)= \tfrac{1}{m-1}\sum_{k=1}^m (n_k - \bar{n})^2 \] 
+\[s^2 (\bar{n}) = \tfrac{s^2 (n_k)}{m}\]
+\item Incertezza: \(\delta{}  Vpp= \)
+\item Valore efficace e incertezza \(Veff \)
+\end{itemize}
+
+\section{Misurazione di frequenza}
+\begin{itemize}
+\item Formula incertezza:
+\item \(T= s\pm s \)
+\item \(f= Hz \pm Hz\)
+\end{itemize}
+
+\section{Verifica con multimetro}
+\begin{itemize}
+\item \(Veff= \pm V \)
+\item \(f= Hz \pm Hz \)
+\end{itemize}
+
+\chapter{Misurazione del tempo di salita}
+
+\section{ Misurazione 1}
+\begin{itemize}
+\item Il sistema in misura presenta un disadattamento d’impedenza il cui effetto `e quello di distorcere il fronte di salita del segnale. In queste condizioni il tempo di salita è \(ts1 = ns\)
+\item Misurazione in condizioni di adattamento \(ts_2 = ns\) 
+\item Tempo di salita introdotto dall’oscilloscopio a causa della sua banda passante \(tso=\tfrac{0.35}{B} = ns\)
+\item \(ts= \sqrt{ts_2^2 -tso^2} = ns\)
+\end{itemize}
+
+\section{Misurazione 2}
+??? la faremo... forse
+
+\begin{enumerate}
+\item Frequenza del polo ed effetto sulla misura del tempo di salita
+  \begin{itemize}
+    \item Capacità totale \(Ctot = pF\)
+    \item Resistenza del generatore ”modificato” \(Rg= \)
+    \item Frequenza polo \(fp = \tfrac{1}{2\pi \cdot Rg \cdot Ctot} = kHz \)
+    \item Tempo di salita dovuto al polo \(tsp= 0.35/fp = ns\)
+    \item Verifica sperimentale \(tsp_m = ns\)
+    \end{itemize}
+
+\item Per ridurre questo effetto sistematico utilizziamo la sonda compensata al posto del cavo coassiale
+ \begin{itemize}
+ \item  \(Cs= pf\)
+ \end{itemize}
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
