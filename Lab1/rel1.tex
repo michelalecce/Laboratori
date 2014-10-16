@@ -30,22 +30,51 @@
 \section*{Misurazione di valore efficace e frequenza}
 \end{tcolorbox}
 
-\subsection{Misurazione del valore efficace}
-
+Impostazioni generatore di segnali :
 \begin{itemize}
-\item Lettura dell’ampiezza picco-picco {\(Vpp= V\)}
-\item Formula impiegata per il calcolo dell’incertezza: Modello probabilistico \[\bar{n} = \tfrac{1}{m}\sum_{k=1}^m n_k \]
+\item Segnale sinusoidale
+\item Nessun offset
+\item Ampiezza 1V
+\item Frequenza 1Khz
+\end{itemize}
+
+Impostazioni oscilloscopio :
+\begin{itemize}
+\item Sensibilità orizzontale \(500 \muS/div \)
+\item Sensibilità verticale \(2 V/div\)
+\end{itemize}
+
+Collegamenti:
+\begin{itemize}
+\item Output del generatore di segnale collegato al CH1 dell'oscilloscopio con un cavo coassiale da \(50 \Omega\)  
+\end{itemize}
+
+Formula impiegata per il calcolo dell’incertezza: Modello probabilistico \[\bar{n} = \tfrac{1}{m}\sum_{k=1}^m n_k \]
 \[s^2 (n_k)= \tfrac{1}{m-1}\sum_{k=1}^m (n_k - \bar{n})^2 \] 
 \[s^2 (\bar{n}) = \tfrac{s^2 (n_k)}{m}\]
-\item Incertezza: \(\delta{}  Vpp= \)
-\item Valore efficace e incertezza \(Veff \)
+
+\subsection{Misurazione del valore efficace}
+
+La misurazione della tensione di picco-picco permette di ricavare in maniera indiretta il valore efficace della tensione
+\begin{itemize}
+\item Lettura dell’ampiezza picco-picco \\ 
+    \begin{tabular}{|r|l|l|l|l|}
+     \hline
+     \multicolumn{4}{|c|}{\(Vpp (mV)\)} \\
+     \hline
+     \(968,0\) & \(952,0\) & \(976,0\) & \(984,0\) \\
+     \hline
+   \end{tabular}
+Utilizzando la formula sotto specificata per il calcolo della media otteniamo :
+\[\overline{Vpp}= 970,0 mV\]
+\item Incertezza: \(\delta{}  Vpp= 6,83 mV\)
+\item Valore efficace e incertezza \(Veff= \tfrac{Vpp}{\sqrt{2}} = 685,9 \pm 6,83 mV \)
 \end{itemize}
 
 \subsection{Misurazione di frequenza}
 \begin{itemize}
-\item Formula incertezza:
-\item \(T= s\pm s \)
-\item \(f= Hz \pm Hz\)
+\item \(T_1 = 1000 \mu s\) \(T_2 = 998 \mu s\) \(\overline{T} = 999 \pm 1 \mu s\)
+\item \(f= 1,000 \pm 0,001 kHz\)
 \end{itemize}
 
 \subsection{Verifica con multimetro}
