@@ -1,0 +1,73 @@
+;; Object lab1/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "lab1/"
+  :tables (list 
+   (semanticdb-table "main.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("stdlib.h" include (:system-flag t) nil [20 39])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [50 59])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [60 73]))                  
+                :type "int")
+                nil [41 282]))          
+    :file "main.c"
+    :pointmax 283
+    :fsize 282
+    :lastmodtime '(21562 27878 303233 368000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "ansi2.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("stdlib.h" include (:system-flag t) nil [20 39])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [50 59])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [60 73]))                  
+                :type "int")
+                nil [41 379]))          
+    :file "ansi2.c"
+    :pointmax 380
+    :fsize 397
+    :lastmodtime '(21562 32619 252323 599000)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "posix.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("sys/stat.h" include (:system-flag t) nil [1 22])
+            ("fcntl.h" include (:system-flag t) nil [23 41])
+            ("unistd.h" include (:system-flag t) nil [42 61])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [72 81])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [82 95]))                  
+                :type "int")
+                nil [63 283]))          
+    :file "posix.c"
+    :pointmax 285
+    :fsize 284
+    :lastmodtime '(21562 33371 50503 644000)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!marco!Documents!so!lab1!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2"
+  )

@@ -8,7 +8,8 @@
  '(TeX-source-correlate-mode t)
  '(TeX-source-correlate-start-server t)
  '(TeX-view-program-list (quote (("Okular" "okular -unique %o#src:%n%b"))))
- '(TeX-view-program-selection (quote ((output-pdf "Okular") ((output-dvi style-pstricks) "dvips and gv") (output-dvi "xdvi") (output-pdf "Evince") (output-html "xdg-open")))))
+ '(TeX-view-program-selection (quote ((output-pdf "Okular") ((output-dvi style-pstricks) "dvips and gv") (output-dvi "xdvi") (output-pdf "Evince") (output-html "xdg-open"))))
+ '(ispell-dictionary "it"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
