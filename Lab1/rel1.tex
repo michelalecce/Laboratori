@@ -6,6 +6,8 @@
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{framed}
 \usepackage[most]{tcolorbox}
+\usepackage[top=4cm, bottom=4cm, left=2cm, right=2cm]{geometry}
+
 
 \begin{document}
 \title{Laboratorio 1}
@@ -25,6 +27,7 @@
 \caption{un oscilloscopio}
 \end{figure}
 
+\newpage
 
 \begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
 \section*{Misurazione di valore efficace e frequenza}
@@ -40,7 +43,7 @@ Impostazioni generatore di segnali :
 
 Impostazioni oscilloscopio :
 \begin{itemize}
-\item Sensibilità orizzontale \(500 \muS/div \)
+\item Sensibilità orizzontale \(500  \mu S/div \)
 \item Sensibilità verticale \(2 V/div\)
 \end{itemize}
 
@@ -64,8 +67,8 @@ La misurazione della tensione di picco-picco permette di ricavare in maniera ind
      \hline
      \(968,0\) & \(952,0\) & \(976,0\) & \(984,0\) \\
      \hline
-   \end{tabular} \\
-Utilizzando la formula sotto specificata per il calcolo della media otteniamo :
+   \end{tabular} \\ \\
+Utilizzando la formula sotto specificata per il calcolo della media otteniamo:
 \[\overline{Vpp}= 970,0 mV\]
 \item Incertezza: \(\delta{}  Vpp= 6,83 mV\)
 \item Valore efficace e incertezza \(Veff= \tfrac{Vpp}{\sqrt{2}} = 685,9 \pm 6,83 mV \)
