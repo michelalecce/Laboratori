@@ -1,0 +1,169 @@
+
+\documentclass[a4paper]{article}
+\usepackage{mathtools}
+\usepackage[utf8x]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage[top=4cm, bottom=4cm, left=2cm, right=2cm]{geometry}
+
+\begin{document}
+\title{Laboratorio 1}
+\author{
+        Tabacoff Mila Romana Cécile \\
+        Magliona Marco \\
+        Lecce Michela \\
+        Della Monica Andrea}
+
+\date{\today}
+\maketitle
+
+\newpage
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Scopo dell'esercitazione}
+\end{tcolorbox}
+
+\begin{itemize}
+\item Realizzare un generatore con porte logiche
+\item Verificare il comportamento di un contatore asincrono
+\item Misurare i ritardi del contatore
+\item Decodificare uno stato di uscita
+\item Verificare la presenza di rimbalzi sui contatti meccanici
+\end{itemize}
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Progetto->TODO}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Montaggio del genatore di onda quadra}
+\end{tcolorbox}
+
+Si collega il circuito integrato alla basetta e con due jumper si collega all'alimentazione:
+\begin{itemize}
+\item piedino 14 a Vcc
+\item piedino 7 a GND
+\item piedino 1 a ingresso
+\item piedino 2 a uscita
+\item #JOBFORMARCO #FALLO #ricordati
+\end{itemize}
+Gli altri piedini sono stati collegati a massa come consigliato, in modo da evitare interferenze esterne.
+Si collegano inoltre resistenza e condensatore come da circuito (fig 1); successivamente Va e Vb vengono collegate rispettivamente al + e al - dell'alimentazione.
+Si utilizza un cavo sonda-BNC per collegare il CH1 dell'oscilloscopio con GND e resistenza del circuito.
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Calcolo capacità del condensatore}
+\end{tcolorbox}
+
+\[T'=\tfrac{1}{2f}=\tfrac{1}{20kHz}=R\cdotC\cdot\ln{\tfrac{V_{uL}-V_{s2}}{V_{uL}-V_{s1}}\]
+\[C=\tfrac{T'}{R}\cdot\tfrac{1}{\ln{\tfrac{V_{uL}-V_{s2}}{V_{uL}-V_{s1}}}=\tfrac{1}{20kHz\cdot100k\Omega}\cdot\tfrac{1}{\ln{\tfrac{0,001-2,5}{0,0001-1,6}}}= 1,12 * 10^{-9} F = 1,12 nF\]
+
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Misure sul generatore di onda quadra}
+\end{tcolorbox}
+
+Visualizzazione:
+\begin{itemize}
+\item CH1 segnale triangolare dal generatore di segnali a 10kHz
+\item CH2 uscita del comparatore
+\end{itemize}
+
+
+Impostazioni oscilloscopio :
+\begin{itemize}
+\item Sensibilità verticale \(2 V/div\)
+\item Sensibilità orizzontale \(25 \mu s/div \) 
+\end{itemize}
+
+
+Si osserva che cambiando l'offset e ponendolo \(<0,9\) (soglia datasheet) il comparatore non commuta: non si osserva l'onda quadra TODO foto 13,14
+
+Superando \(V_{t+ max}=3,15V\) l'onda non è più stabile 
+
+Per completare il circuito si inserisce nuovamente la resistenza da \(100k\Omega\) (come circuito iniziale) e dopo aver scollegato il generatore si osserva: 
+
+Frequenza : \(13,09 kHz\)
+  
+\begin{center}
+  \begin{tabular}{|r|l|l|l|l|}
+     \hline
+     \multicolumn{3}{|c|}{\(Ingresso (mV)\)} \\
+     \hline
+     \(960\) & \(800\) & \(1200\) \\
+     \hline
+   \end{tabular} \\ \\
+\[V_I=986,67 \pm 116,24 mV\]
+
+
+ \begin{tabular}{|r|l|l|l|l|}
+     \hline
+     \multicolumn{5}{|c|}{\(Uscita (V)\)} \\
+     \hline
+     \(5,44\) & \(8,32\) & \(6,32\) & \(5,60\) & \(7,60\) \\
+     \hline
+   \end{tabular} \\ \\
+
+\[V_U=6,65 \pm 0,56 V\]
+\end{center}
+ L'onda quadra si autogenera anche senza generatore
+
+Si verifica che il trigger è compreso effettivamente tra 1,55 V e 3,15 V, infatti vale 2,4 V  TODO foto 16 
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Montaggio del contatore}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Misure sul contatore asincrono}
+\end{tcolorbox}
+
+\begin{itemize}
+
+\item
+Si collega all’ingresso il segnale a onda quadra generato con il circuito precedentemente montato.Si verifica con l’oscilloscopio il corretto funzionamento del divisore (sulle varie uscite sono presenti onde quadre con frequenza via via dimezzata)
+
+\begin{center}
+ \begin{tabular}{|r|l|l|l|l|}
+     \hline
+     \multicolumn{5}{|c|}{Frequenza di ingresso  \((kHz)\)} \\
+     \hline
+     \(15,43\) & \(15,55\) & \(15,58\) & \(15,63\) & \(15,68\) \\
+     \hline
+   \end{tabular} \\ \\
+
+\[F_I=15,57 \pm 0,04 kHz\]
+
+\begin{tabular}{|r|l|l|l|l|}
+     \hline
+     \multicolumn{5}{|c|}{Frequenza di uscita 1  \((kHz)\)} \\
+     \hline
+     \(7,89\) & \(7,76\) & \(7,77\) & \(7,83\) & \(7,77\) \\
+     \hline
+   \end{tabular} \\ \\
+
+\[F_{U1}= 7,80 \pm 0,02 kHz\]
+
+\begin{tabular}{|r|l|l|l|l|}
+     \hline
+     \multicolumn{3}{|c|}{Frequenza di uscita 2  \((kHz)\)} \\
+     \hline
+     \(3,88\) & \(3,87\) & \(3,89\)  \\
+     \hline
+   \end{tabular} \\ \\
+
+\[F_{U2}= 3,88 \pm 0,01 kHz\]
+\end{center}
+
+
+\item Si collega all’ingresso di clock una resistenza di pull-up \(R_{pu}= 10 k\Omega\) e un contatto volante con un filo, in modo da poter applicare manualmente il segnale di clock (facendo contatto a massa). Far avanzare a mano il contatore. Si verifica che ad ogni azionamento del contatto il contatore avanza di più passi a causa dei rimbalzi del contatto meccanico (BOUNCE). OK FOTO TANTE
+
+\item Si osserva che il filo collegato all'ingresso del contatore si comporta come un'antenna catturando disturbi dell'ambiente esterno FOTO
+\end{itemize}
+
+\LaTeX
+\end{document}

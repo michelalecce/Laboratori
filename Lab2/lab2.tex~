@@ -1,0 +1,64 @@
+
+\documentclass[a4paper]{article}
+\usepackage{mathtools}
+\usepackage[utf8x]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+
+\begin{document}
+\title{Laboratorio 1}
+\author{
+        Tabacoff Mila Romana Cécile \\
+        Magliona Marco \\
+        Lecce Michela \\
+        Della Monica Andrea}
+
+\date{\today}
+\maketitle
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Scopo dell'esercitazione}
+\end{tcolorbox}
+
+\begin{itemize}
+\item Realizzare un generatore con porte logiche
+\item Verificare il comportamento di un contatore asincrono
+\item Misurare i ritardi del contatore
+\item Decodificare uno stato di uscita
+\item Verificare la presenza di rimbalzi sui contatti meccanici
+\end{itemize}
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Progetto->TODO}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Montaggio del genatore di onda quadra}
+\end{tcolorbox}
+
+Si collega il circuito integrato alla basetta e con due jumper si collega all'alimentazione:
+\begin{itemize}
+\item piedino 14 a Vcc
+\item piedino 7 a GND
+\item piedino 1 a ingresso
+\item piedino 2 a uscita
+\item #JOBFORMARCO #FALLO #ricordati
+\end{itemize}
+Gli altri piedini sono stati collegati a massa come consigliato, in modo da evitare interferenze esterne.
+Si collegano inoltre resistenza e condensatore come da circuito (fig 1); successivamente Va e Vb vengono collegate rispettivamente al + e al - dell'alimentazione.
+Si utilizza un cavo sonda-BNC per collegare il CH1 dell'oscilloscopio con GND e resistenza del circuito.
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Calcolo capacità del condensatore}
+\end{tcolorbox}
+
+\[T'=\tfrac{1}{2f}=\tfrac{1}{20kHz}=R\cdotC\cdot\ln{\tfrac{V_{uL}-V_{s2}}{V_{uL}-V_{s1}}\]
+\[C=\tfrac{T'}{R}\cdot\tfrac{1}{\ln{\tfrac{V_{uL}-V_{s2}}{V_{uL}-V_{s1}}}=\tfrac{1}{20kHz\cdot100k\Omega}\cdot\tfrac{1}{\ln{\tfrac{0,001-2,5}{0,0001-1,6}}}= 1,12 * 10^{-9} F = 1,12 nF\]
+
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Misure sul generatore di onda quadra}
+\end{tcolorbox}
