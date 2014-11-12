@@ -1,0 +1,118 @@
+\documentclass[a4paper]{article}
+\usepackage{mathtools}
+\usepackage[utf8x]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage[top=4cm, bottom=4cm, left=2cm, right=2cm]{geometry} 
+
+\begin{document}
+\title{Laboratorio 3}
+\author{
+        Tabacoff Mila Romana Cécile s192202\\
+        Magliona Marco s192554 \\
+        Lecce Michela s193412\\
+        Della Monica Andrea s191447}
+
+\date{\today}
+\maketitle
+
+\newpage
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Scopo dell'esercitazione}
+\end{tcolorbox}
+
+Scopo di questa esercitazione è verificare il comportamento di spezzoni di cavo coassiale utilizzato per trasferire segnali digitali in diverse condizioni di pilotaggio e di terminazione.
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Elenco dei dispositivi}
+\end{tcolorbox}
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Misure}
+\end{tcolorbox}
+
+\begin{enumerate}
+\item [a.]Misura dei parametri del generatore
+      \begin{itemize}
+      \item Tramite il generatore di segnali si genera un'onda quadra ad una frequenza di 200 kHz e tensione picco picco di 4V. L'uscita del generatore di segnali è collegata all'oscilloscopio digitale tramite un cavo BNC di lunghezza ≈12m.
+      Si verifica l’ampiezza Vb dell’uscita del generatore a vuoto (foto sottostante): //TODO foto
+Si ottiene: \[V_{b1}=1,972 \pm 5,77\cdot10^{-5} V\]
+\item Collegando in serie al generatore una resistenza di carico \(R_L=100\Omega\)  (come illustrato nella foto sottostante) si ottiene una tensione di uscita pari a: \(V_{b2}=1,294\pm1,53\cdot10^{-4} V\)
+      \end{itemize}
+\item [b.]Misura dei parametri del cavo
+\item [c.]Disadattamento lato driver e lato terminazione
+  \begin{itemize}
+    \item Si collega una resistenza Rs (220 omh) in serie tra generatore e linea, in modo da lasciare aperta la linea all’estremo remoto, in questo modo il coefficiente \(\Gamma_g\) vale 1.
+
+FOTO14
+
+Si calcola il valore del coefficiente gamma lato generatore applicando la formula: 
+FORMULA
+
+con \(R_g=R_0+R_s=(50+220)\Omega=270\Omega\)
+
+Si confronta il risultato teorico con quello ottenuto misurando l’ampiezza dei gradini delle due forme d’onda. //FIXME
+
+ \begin{tabular}{|r|l|l|l|l|}
+     \hline
+     \multicolumn{3}{|c|}{\(U (V)\)} \\
+     \hline
+     \(1,04\) & \(1,00\) & \(1,01\)\\
+     \hline
+   \end{tabular} \\ \\
+\[U_{medio}=1,01 \pm 0,01V\]
+
+\begin{tabular}{|r|l|l|l|l|}
+     \hline
+     \multicolumn{3}{|c|}{\(v (V)\)} \\
+     \hline
+     \(1,54\) & \(1,58\) & \(1,56\)\\
+     \hline
+   \end{tabular} \\ \\
+\[v_{medio}=1,56 \pm 0,01V\]
+
+Applicando il diagramma a traliccio si ha:
+\[\Gamma_g = \tfrac{v-2U}{U} = -0,45 \pm 0,05\]
+\item Si ripete la misura ponendo una resistenza da 22 omh in parallelo sull’uscita del generatore in modo da avere una misura con resistenza equivalente del generatore più bassa dell’impedenza caratteristica.
+FOTO15
+
+Si osservano delle oscillazioni dovute al fatto che il coefficiente di riflessione lato generatore gamma g è negativo.
+
+Si calcola il valore del coefficiente gamma g applicando la formula: 
+FORMULA
+
+Con \(R_g=R_0\parallel R_s= (50\parallel 22)\Omega = 15,28 \Omega\)
+
+Si confronta il risultato teorico con quello ottenuto misurando l’ampiezza dei gradini delle due forme d’onda.
+
+ \begin{tabular}{|r|l|l|l|l|}
+     \hline
+     \multicolumn{3}{|c|}{\(U (mV)\)} \\
+     \hline
+     \(300\) & \(260\) & \(220\)\\
+     \hline
+   \end{tabular} \\ \\
+\[U_{medio}=260 \pm 23 mV\]
+
+\begin{tabular}{|r|l|l|l|l|}
+     \hline
+     \multicolumn{3}{|c|}{\(v (V)\)} \\
+     \hline
+     \(544\) & \(560\) & \(536\)\\
+     \hline
+   \end{tabular} \\ \\
+\[v_{medio}=546 \pm 7 mV\]
+
+Applicando il diagramma a traliccio si ha:  
+\[\Gamma_g = \tfrac{v-2U}{U} = 0,1 \pm \]
+  \end{itemize}
+\item [d.]Carico capacitivo
+\item [e.]Riflettometria nel dominio del tempo
+
+\end{enumerate}
+
+\LaTeX
+\end{document}

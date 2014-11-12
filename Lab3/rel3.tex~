@@ -1,0 +1,53 @@
+\documentclass[a4paper]{article}
+\usepackage{mathtools}
+\usepackage[utf8x]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage[top=4cm, bottom=4cm, left=2cm, right=2cm]{geometry} 
+
+\begin{document}
+\title{Laboratorio 3}
+\author{
+        Tabacoff Mila Romana Cécile s192202\\
+        Magliona Marco s192554 \\
+        Lecce Michela s193412\\
+        Della Monica Andrea s191447}
+
+\date{\today}
+\maketitle
+
+\newpage
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Scopo dell'esercitazione}
+\end{tcolorbox}
+
+Scopo di questa esercitazione è verificare il comportamento di spezzoni di cavo coassiale utilizzato per trasferire segnali digitali in diverse condizioni di pilotaggio e di terminazione.
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Elenco dei dispositivi}
+\end{tcolorbox}
+
+\begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
+\section*{Misure}
+\end{tcolorbox}
+
+\begin{enumerate}
+\item [a.]Misura dei parametri del generatore
+      \begin{itemize}
+      \item Tramite il generatore di segnali si genera un'onda quadra ad una frequenza di 200 kHz e tensione picco picco di 4V. L'uscita del generatore di segnali è collegata all'oscilloscopio digitale tramite un cavo BNC di lunghezza ≈12m.
+      Si verifica l’ampiezza Vb dell’uscita del generatore a vuoto (foto sottostante): //TODO foto
+Si ottiene: \[V_{b1}=1,972 \pm 5,77\cdot10^{-5} V\]
+\item 
+      \end{itemize}
+\item [b.]Misura dei parametri del cavo
+\item Disadattamento lato driver e lato terminazione
+\item Carico capacitivo
+\item Riflettometria nel dominio del tempo
+
+\end{enumerate}
+
+\LaTeX
+\end{document}
