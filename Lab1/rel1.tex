@@ -7,7 +7,9 @@
 \usepackage{framed}
 \usepackage[most]{tcolorbox}
 \usepackage[top=4cm, bottom=4cm, left=2cm, right=2cm]{geometry}
-
+\usepackage{float}
+\usepackage[section]{placeins}
+\usepackage{ragged2e}
 
 \begin{document}
 \title{Laboratorio 1}
@@ -56,6 +58,7 @@ Formula impiegata per il calcolo dell’incertezza: Modello probabilistico \[\ba
 \[s^2 (n_k)= \tfrac{1}{m-1}\sum_{k=1}^m (n_k - \bar{n})^2 \] 
 \[s^2 (\bar{n}) = \tfrac{s^2 (n_k)}{m}\]
 
+\setcounter{secnumdepth}{1}
 \subsection{Misurazione del valore efficace}
 
 La misurazione della tensione di picco-picco permette di ricavare in maniera indiretta il valore efficace della tensione
@@ -68,6 +71,18 @@ La misurazione della tensione di picco-picco permette di ricavare in maniera ind
      \(968,0\) & \(952,0\) & \(976,0\) & \(984,0\) \\
      \hline
    \end{tabular} \\ \\
+
+\centering
+  \minipage{0.5\textwidth}
+    \includegraphics[scale=0.1]{foto/WP_20141009_003.jpg}
+  \endminipage
+  \minipage{0.5\textwidth}
+    \includegraphics[scale=0.14]{foto/WP_20141009_004.jpg}
+  \endminipage
+
+\justify
+\newpage
+
 Utilizzando la formula sotto specificata per il calcolo della media otteniamo:
 \[\overline{Vpp}= 970,0 mV\]
 \item Incertezza: \(\delta{}  Vpp= 6,83 mV\)
@@ -85,7 +100,11 @@ Utilizzando la formula sotto specificata per il calcolo della media otteniamo:
 \item \(Veff= 0,347 \pm 0,06 V \)
 \item \(f= 1 \pm 0,010 kHz \)
 \end{itemize}
-\item Per verificarne la compatibilità : \(0,347 * \sqrt{2} = 0,49 V \approx 0,5\ V) rientra nell'incertezza 
+Per verificarne la compatibilità : \(0,347 * \sqrt{2} = 0,49 V \approx 0,5\ V \) rientra nell'incertezza 
+
+\hfill\break
+\hfill\break
+\hfill\break
 
 \begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
 \section*{Misurazione del tempo di salita}
@@ -137,6 +156,10 @@ Lunghezza cavi complessiva \(\approx 1 m\)
     \item Verifica sperimentale \[tsp_m = \tfrac{235+234+230+227+226}{5} ns = 230,4 \pm 1,54 ns\]
     \end{itemize}
 
+\begin{center}
+\includegraphics[scale=0.1]{foto/WP_20141009_010.jpg}
+\end{center}
+
 \item Per ridurre questo effetto sistematico utilizziamo la sonda compensata al posto del cavo coassiale
  \begin{itemize}
  \item  \(C_s=\tfrac{R_{osci}\cdotC_{osci}}{R_s}= \tfrac{1*10^{12}\Omega\cdot13 pF}{9\cdot10^{12}\Omega} = 1,44 pF\)
@@ -147,7 +170,12 @@ Lunghezza cavi complessiva \(\approx 1 m\)
  \end{itemize}
 \end{enumerate}
 
+\begin{center}
+    \includegraphics[scale=0.1]{foto/WP_20141009_012.jpg}
+\end{center}
 
+\hfill\break
+\hfill\break
 
 \begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
 \section*{Aliasing}
@@ -183,16 +211,21 @@ Collegamenti:
   \item Abbiamo modificato la frequenza del generatore a \(99,9 kHz\) e osserviamo che il segnale non è più sinusoidale per effetto dell'aliasing. \\ A \(99 KHz\) per effetto dell'aliasing percettivo ci sembra di vedere due sinusoidi sfasate 
  \end{enumerate}
 
-;TODO FOTO
+\begin{center}
+    \includegraphics[scale=0.13]{foto/WP_20141009_023.jpg}
+\end{center}
+
 
 \subsection{Effetto dell’aliasing nel dominio del tempo}
  \begin{enumerate}
   \item Abbiamo impostato la frequenza del generatore di segnali a \(fg=100.1 kHz\)
   \item Abbiamo ridotto la frequenza di scansione fino ad avere una frequenza di campionamento di \(fco=100 kHz\) Abbiamo misurato la frequenza del segnale osservato \(fs= 102,2 kHz\)
   \item Abbiamo portato la frequenza del generatore di segnali a \(fg=100kHz\)
-  \item FOTO
 \end{enumerate}
 
+\begin{center}
+    \includegraphics[scale=0.13]{foto/WP_20141009_021.jpg}
+\end{center}
 
 \begin{tcolorbox}[breakable,colback=cyan,colframe=cyan]
 \section*{Rilevazione sincrona di segnali}
@@ -209,13 +242,27 @@ Collegamenti:
    \end{itemize}
   \item Segnale del canale 1 con oscilloscopio sincronizzato sul canale 1 e poi sul canale 2
 
-FOTO
+\begin{center}
+\minipage{0.5\textwidth}
+    \includegraphics[scale=0.115]{foto/WP_20141009_025.jpg}
+  \endminipage
+  \minipage{0.5\textwidth}
+    \includegraphics[scale=0.14]{foto/WP_20141009_026.jpg}
+  \endminipage
+\end{center}
 
 \subsection{Misurazione}
   \item Oscilloscopio sincronizzato sul canale 2 con l'opzione media
   \item Abbiamo modificato il segnale di disturbo e il numero di medie
-  \item Effetto media quando l'oscilloscopio è sincronizzato sul canale 1
- \end{enumerate}
+
+\begin{center}
+\minipage{0.5\textwidth}
+    \includegraphics[scale=0.4]{foto/WP_20141009_027.jpg}
+  \endminipage
+  \minipage{0.5\textwidth}
+    \includegraphics[scale=0.14]{foto/WP_20141009_028.jpg}
+  \endminipage
+\end{center}
 
 \noindent \LaTeX
 
